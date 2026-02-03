@@ -1,0 +1,27 @@
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "dotenv -e .env tsc --watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "lint": ""
+  },
+  "keywords": [],
+  "author": "priyanshu",
+  "license": "ISC",
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:^",
+    "@repo/order-db": "workspace:^",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@clerk/fastify": "^2.6.19",
+    "dotenv-cli": "^11.0.0",
+    "fastify": "^5.7.4",
+    "fastify-zod": "^1.4.0"
+  }
+}
