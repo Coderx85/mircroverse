@@ -54,9 +54,18 @@ importers:
       '@clerk/fastify':
         specifier: ^2.6.19
         version: 2.6.19(fastify@5.7.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@fastify/cors':
+        specifier: ^11.2.0
+        version: 11.2.0
+      '@repo/product-db':
+        specifier: workspace:*
+        version: link:../../packages/product-db
       dotenv-cli:
         specifier: ^11.0.0
         version: 11.0.0
+      drizzle-zod:
+        specifier: ^0.8.3
+        version: 0.8.3(drizzle-orm@0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0))(zod@3.25.76)
       fastify:
         specifier: ^5.7.4
         version: 5.7.4
@@ -64,12 +73,21 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(fastify@5.7.4)
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
       '@types/node':
         specifier: ^25.2.0
         version: 25.2.0
       drizzle-orm:
         specifier: ^0.45.1
         version: 0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
   apps/web:
     dependencies:
@@ -162,9 +180,18 @@ importers:
       '@neondatabase/serverless':
         specifier: ^1.0.2
         version: 1.0.2
+      dotenv-cli:
+        specifier: ^11.0.0
+        version: 11.0.0
       drizzle-orm:
         specifier: ^0.45.1
         version: 0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0)
+      drizzle-zod:
+        specifier: ^0.8.3
+        version: 0.8.3(drizzle-orm@0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0))(zod@4.3.6)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       drizzle-kit:
         specifier: ^0.31.8
@@ -172,6 +199,9 @@ importers:
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
   packages/typescript-config: {}
 
@@ -736,6 +766,9 @@ packages:
 
   '@fastify/ajv-compiler@4.0.5':
     resolution: {integrity: sha512-KoWKW+MhvfTRWL4qrhUwAAZoaChluo0m0vbiJlGMt2GXvL4LVPQEjt8kSpHI3IBq5Rez8fg+XeH3cneztq+C7A==}
+
+  '@fastify/cors@11.2.0':
+    resolution: {integrity: sha512-LbLHBuSAdGdSFZYTLVA3+Ch2t+sA6nq3Ejc6XLAKiQ6ViS2qFnvicpj0htsx03FyYeLs04HfRNBsz/a8SvbcUw==}
 
   '@fastify/error@4.2.0':
     resolution: {integrity: sha512-RSo3sVDXfHskiBZKBPRgnQTtIqpi/7zhJOEmAxCiBcM7d0uwdGdxLlsCaLzGs8v8NnxIRlfG0N51p5yFaOentQ==}
@@ -1432,6 +1465,12 @@ packages:
         optional: true
       sqlite3:
         optional: true
+
+  drizzle-zod@0.8.3:
+    resolution: {integrity: sha512-66yVOuvGhKJnTdiqj1/Xaaz9/qzOdRJADpDa68enqS6g3t0kpNkwNYjUuaeXgZfO/UWuIM9HIhSlJ6C5ZraMww==}
+    peerDependencies:
+      drizzle-orm: '>=0.36.0'
+      zod: ^3.25.0 || ^4.0.0
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -2640,6 +2679,9 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
 snapshots:
 
   '@clerk/backend@2.29.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
@@ -2975,6 +3017,11 @@ snapshots:
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
       fast-uri: 3.1.0
+
+  '@fastify/cors@11.2.0':
+    dependencies:
+      fastify-plugin: 5.1.0
+      toad-cache: 3.7.0
 
   '@fastify/error@4.2.0': {}
 
@@ -3622,6 +3669,16 @@ snapshots:
     optionalDependencies:
       '@neondatabase/serverless': 1.0.2
       '@types/pg': 8.16.0
+
+  drizzle-zod@0.8.3(drizzle-orm@0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0))(zod@3.25.76):
+    dependencies:
+      drizzle-orm: 0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0)
+      zod: 3.25.76
+
+  drizzle-zod@0.8.3(drizzle-orm@0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0))(zod@4.3.6):
+    dependencies:
+      drizzle-orm: 0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0)
+      zod: 4.3.6
 
   dunder-proto@1.0.1:
     dependencies:
@@ -5128,3 +5185,5 @@ snapshots:
       zod: 3.25.76
 
   zod@3.25.76: {}
+
+  zod@4.3.6: {}

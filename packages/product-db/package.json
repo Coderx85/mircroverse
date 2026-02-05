@@ -1,20 +1,25 @@
 {
-  "name": "product-db",
-  "version": "1.0.0",
+  "name": "@repo/product-db",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {},
+  "exports": {
+    "./drizzle/schema": "./drizzle/schema.ts",
+    "./drizzle/db": "./drizzle/db.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
-    "drizzle-orm": "^0.45.1"
+    "dotenv-cli": "^11.0.0",
+    "drizzle-orm": "^0.45.1",
+    "drizzle-zod": "^0.8.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "drizzle-kit": "^0.31.8",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
