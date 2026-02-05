@@ -10,13 +10,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@repo/product-db": "workspace:*",
     "@clerk/fastify": "^2.6.19",
+    "@fastify/cors": "^11.2.0",
     "dotenv-cli": "^11.0.0",
+    "drizzle-zod": "^0.8.3",
     "fastify": "^5.7.4",
     "fastify-zod": "^1.4.0"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^25.2.0",
-    "drizzle-orm": "^0.45.1"
+    "drizzle-orm": "^0.45.1",
+    "typescript": "^5.9.3"
   }
 }
