@@ -9,12 +9,12 @@
     "baseColor": "zinc",
     "cssVariables": true
   },
-  "iconLibrary": "lucide",
+  "iconLibrary": "@tabler/icons-react",
   "aliases": {
     "components": "@/components",
     "hooks": "@/hooks",
     "lib": "@/lib",
-    "utils": "@workspace/ui/lib/utils",
-    "ui": "@workspace/ui/components"
+    "utils": "@repo/ui/src/lib/utils",
+    "ui": "@repo/ui"
   }
 }

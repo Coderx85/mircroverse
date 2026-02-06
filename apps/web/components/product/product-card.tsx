@@ -1,6 +1,7 @@
 "use client";
 
 import { TProduct } from "@repo/types";
+import { IconPackage } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -33,16 +34,7 @@ const ProductCard = ({ product }: { product: TProduct }) => {
       {/* IMAGE */}
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[2/3]">
-          <Image
-            src={
-              (product.images as Record<string, string>)?.[
-                productTypes.color
-              ] || ""
-            }
-            alt={product.name}
-            fill
-            className="object-cover hover:scale-105 transition-all duration-300"
-          />
+          <IconPackage className="w-full h-full" />
         </div>
       </Link>
       {/* PRODUCT DETAIL */}

@@ -1,5 +1,5 @@
-import ProductList from "@/components/ProductList";
-import Image from "next/image";
+import { IconActivity } from "@tabler/icons-react";
+import ProductList from "../components/product/prduct-list";
 
 const Homepage = async ({
   searchParams,
@@ -10,9 +10,9 @@ const Homepage = async ({
   return (
     <div className="">
       <div className="relative aspect-[3/1] mb-12">
-        <Image src="/featured.png" alt="Featured Product" fill />
+        <IconActivity className="w-full h-full text-primary" />
       </div>
-      <ProductList category={category} params="homepage" />
+      <ProductList category={category} />
     </div>
   );
 };
