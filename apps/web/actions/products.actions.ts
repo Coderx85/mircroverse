@@ -24,8 +24,10 @@ export const fetchProductsByCategory = async ({
   const res = await fetch(
     `${config.product_server_url}/products?${category ? `category=${category}&` : ""}${search ? `search=${search}&` : ""}${sort ? `sort=${sort}&` : ""}limit=${limit}`,
   );
+  console.log("Fetch products response:", res);
 
   if (!res || !res.ok) {
+    console.error("Failed to fetch products:", res.statusText);
     return {
       success: false,
       error: `Failed to fetch products: \n ${res.statusText || "Unknown error"}`,
@@ -45,4 +47,22 @@ export const fetchProductsByCategory = async ({
     success: true,
     data,
   };
+};
+
+export const fetchProduct = async (id: string): Promise<TProduct | null> => {
+  const res = await fetch(`${config.product_server_url}/products/${id}`);
+
+  if (!res || !res.ok) {
+    console.error(`Failed to fetch product with id ${id}:`, res.statusText);
+    return null;
+  }
+
+  const data: TProduct = await res.json();
+
+  if (!data || typeof data !== "object") {
+    console.error(`Invalid product data received for id ${id}:`, data);
+    return null;
+  }
+
+  return data;
 };

@@ -2,20 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import SearchBar from "./Searchbar";
+import { IconDashboardFilled } from "@tabler/icons-react";
 
 const Navbar = () => {
   return (
     <nav className="w-full flex-center justify-between pb-3">
       <Link href="/" className="flex items-center">
-        <Image
-          src="/logo.png"
-          alt="Logo"
-          width={32}
-          height={32}
-          className="inline-block ml-2"
-        />
-        <p className="hidden md:block text-md font-medium tracking-wider">
-          {"Microverse"}
+        <IconDashboardFilled className="text-amber-50" size={32} />
+        <p className="hidden md:block text-md font-medium tracking-wider text-white">
+          {"Microverse ."}
         </p>
       </Link>
       {/* RIGHT */}
