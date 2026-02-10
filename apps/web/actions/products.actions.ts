@@ -1,20 +1,9 @@
 "use server";
-import { NextResponse } from "next/server";
 import type { TProduct, TProductSearchQuery } from "@repo/types";
-import { config } from "../lib/config";
+import { config } from "@/lib/config";
+import { APIResponse } from "type";
 
 type TProducts = Required<TProduct>[];
-
-type APIResponse<T> =
-  | {
-      success: true;
-      data: T;
-    }
-  | {
-      success: false;
-      error: string;
-    };
-
 export const fetchProductsByCategory = async ({
   category,
   search,
@@ -30,7 +19,8 @@ export const fetchProductsByCategory = async ({
     console.error("Failed to fetch products:", res.statusText);
     return {
       success: false,
-      error: `Failed to fetch products: \n ${res.statusText || "Unknown error"}`,
+      errorMessage: `Failed to fetch products: ${res.statusText || "Unknown error"}`,
+      error: `Failed to fetch products: ${res.statusText || "Unknown error"}`,
     };
   }
 
@@ -39,12 +29,14 @@ export const fetchProductsByCategory = async ({
   if (!data || data.length === 0 || !Array.isArray(data)) {
     return {
       success: false,
+      errorMessage: "No products found",
       error: "No products found",
     };
   }
 
   return {
     success: true,
+    message: "Products fetched successfully",
     data,
   };
 };

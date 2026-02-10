@@ -8,7 +8,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./*"],
       "@repo/ui": ["../../packages/ui/src/index.ts"],
       "@repo/ui/*": ["../../packages/ui/src/*"],
       "@repo/types": ["../../packages/types/src/index.ts"],
