@@ -1,6 +1,6 @@
 import { OrderSchemaType } from "@repo/order-db";
 
-export type OrderType = OrderSchemaType & {
+export type TOrder = OrderSchemaType & {
   _id: string;
 };
 

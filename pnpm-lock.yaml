@@ -26,12 +26,18 @@ importers:
       dotenv-cli:
         specifier: ^11.0.0
         version: 11.0.0
+      drizzle-zod:
+        specifier: ^0.8.3
+        version: 0.8.3(drizzle-orm@0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.16.0))(zod@4.3.6)
       fastify:
         specifier: ^5.7.4
         version: 5.7.4
       fastify-zod:
         specifier: ^1.4.0
         version: 1.4.0(fastify@5.7.4)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@repo/order-db':
         specifier: workspace:^
@@ -229,9 +235,6 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@repo/types':
-        specifier: workspace:*
-        version: link:../types
       '@types/node':
         specifier: ^25.2.2
         version: 25.2.2
