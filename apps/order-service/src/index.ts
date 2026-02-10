@@ -1,7 +1,7 @@
 import { connectOrderDB } from "@repo/order-db";
 import Fastify from "fastify";
-import { orderRoutes } from "./routes/order.js";
-import { healthRoutes } from "./routes/health.js";
+import { orderRoutes } from "./routes/order/index";
+import { healthRoutes } from "./routes/health";
 
 const app = Fastify({ logger: true });
 

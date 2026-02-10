@@ -13,8 +13,8 @@
   "author": "priyanshu",
   "license": "ISC",
   "devDependencies": {
-    "@repo/typescript-config": "workspace:^",
     "@repo/order-db": "workspace:^",
+    "@repo/typescript-config": "workspace:^",
     "@types/node": "^22.15.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
@@ -22,7 +22,9 @@
   "dependencies": {
     "@clerk/fastify": "^2.6.19",
     "dotenv-cli": "^11.0.0",
+    "drizzle-zod": "^0.8.3",
     "fastify": "^5.7.4",
-    "fastify-zod": "^1.4.0"
+    "fastify-zod": "^1.4.0",
+    "zod": "^4.3.6"
   }
 }
