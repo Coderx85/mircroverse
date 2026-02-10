@@ -1,13 +1,14 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
-import { healthHandler } from "../handlers/heatlh";
+import { healthHandler } from "./handlers/heatlh";
 import {
   createProductHandler,
   deleteProductHandler,
   getProduct,
   getProductsQuery,
   updateProductHandler,
-} from "../handlers/product";
+} from "./handlers/product";
+import { db } from "@repo/product-db/drizzle/db";
 
 const config = {
   serviceName: "Product Service",
