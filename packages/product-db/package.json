@@ -2,7 +2,11 @@
   "name": "@repo/product-db",
   "version": "0.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "with-dev-env": "dotenv -e .env.development",
+    "db:migrate": "pnpm with-dev-env -- drizzle-kit migrate",
+    "db:seed": "pnpm with-dev-env -- tsx seed.ts"
+  },
   "exports": {
     "./drizzle/schema": "./drizzle/schema.ts",
     "./drizzle/db": "./drizzle/db.ts"
@@ -18,7 +22,9 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@types/node": "^25.2.2",
     "drizzle-kit": "^0.31.8",
+    "drizzle-seed": "^0.3.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

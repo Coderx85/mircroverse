@@ -1,5 +1,9 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { product, ProductDbSchema } from "@repo/product-db/drizzle/schema";
+import {
+  GetProductsQuery,
+  product,
+  ProductDbSchema,
+} from "@repo/product-db/drizzle/schema";
 import { db } from "@repo/product-db/drizzle/db";
 import { and, asc, desc, eq } from "drizzle-orm";
 
@@ -104,13 +108,6 @@ export const deleteProductHandler = async (
       message: "Failed to delete product",
     });
   }
-};
-
-type GetProductsQuery = {
-  sort?: "asc" | "desc" | "oldest";
-  category?: string;
-  search?: string;
-  limit?: number;
 };
 
 export const getProductsQuery = async (

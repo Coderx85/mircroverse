@@ -1,9 +1,9 @@
 import { connectOrderDB } from "@repo/order-db";
-import fastify from "fastify";
-import { orderRoutes } from "./routes/order.js";
-import { healthRoutes } from "./routes/health.js";
+import Fastify from "fastify";
+import { orderRoutes } from "./routes/order/index";
+import { healthRoutes } from "./routes/health";
 
-const app = fastify();
+const app = Fastify({ logger: true });
 
 const config = {
   PORT: Number(process.env.PORT) || (4000 as number),

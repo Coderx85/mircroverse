@@ -26,8 +26,8 @@ export const product = pgTable(
     shortDescription: varchar("short_description", { length: 255 }),
     description: text("description"),
     price: integer("price").notNull(),
-    sizes: varchar("sizes").array(),
-    colors: varchar("colors").array(),
+    sizes: varchar("sizes").array().notNull(),
+    colors: varchar("colors").array().notNull(),
     images: json("images"),
     createdAt: timestamp("created_at").defaultNow(),
     updatedAt: timestamp("updated_at").defaultNow(),
@@ -58,3 +58,10 @@ const categoryDbSchema = createInsertSchema(category);
 
 export type CategoryDbSchema = z.infer<typeof categoryDbSchema>;
 export type ProductDbSchema = z.infer<typeof productDbSchema>;
+
+export type GetProductsQuery = {
+  sort?: "asc" | "desc" | "oldest";
+  category?: string;
+  search?: string;
+  limit?: number;
+};
