@@ -18,7 +18,7 @@ export const fetchProductsByCategory = async ({
   if (!res || !res.ok) {
     console.error("Failed to fetch products:", res.statusText);
     return {
-      success: false,
+      ok: false,
       errorMessage: `Failed to fetch products: ${res.statusText || "Unknown error"}`,
       error: `Failed to fetch products: ${res.statusText || "Unknown error"}`,
     };
@@ -28,14 +28,14 @@ export const fetchProductsByCategory = async ({
 
   if (!data || data.length === 0 || !Array.isArray(data)) {
     return {
-      success: false,
+      ok: false,
       errorMessage: "No products found",
       error: "No products found",
     };
   }
 
   return {
-    success: true,
+    ok: true,
     message: "Products fetched successfully",
     data,
   };

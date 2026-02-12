@@ -5,7 +5,8 @@
   "scripts": {
     "with-dev-env": "dotenv -e .env.development",
     "db:migrate": "pnpm with-dev-env -- drizzle-kit migrate",
-    "db:seed": "pnpm with-dev-env -- tsx seed.ts"
+    "db:seed": "pnpm with-dev-env -- tsx seed.ts",
+    "type-check": "tsc --noEmit"
   },
   "exports": {
     "./drizzle/schema": "./drizzle/schema.ts",
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@neondatabase/serverless": "^1.0.2",
     "dotenv-cli": "^11.0.0",
     "drizzle-orm": "^0.45.1",

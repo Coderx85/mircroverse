@@ -7,7 +7,7 @@
     "dev": "dotenv -e .env.development -- tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
-    "typecheck": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "with-dev-env": "dotenv -e .env.development -- ",
     "db:seed": "tsx src/db/seed.ts"
   },

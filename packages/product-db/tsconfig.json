@@ -1,12 +1,11 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
+    "outDir": "dist",
     "baseUrl": ".",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
     "paths": {
-      "@/*": ["./src/*"],
-      "@repo/product-db/*": ["../../packages/product-db/*"]
+      "@/*": ["./*"],
+      "@repo/product-db/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

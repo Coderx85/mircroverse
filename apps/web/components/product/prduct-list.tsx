@@ -17,7 +17,7 @@ const ProductList = async ({
     limit,
   });
 
-  if (!res || res.success === false || res.data.length === 0) {
+  if (!res || res.ok === false || res.data.length === 0) {
     return <div>No products found.</div>;
   }
 
