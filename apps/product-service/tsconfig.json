@@ -8,5 +8,6 @@
       "@/*": ["./src/*"],
       "@repo/product-db/*": ["../../packages/product-db/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }
