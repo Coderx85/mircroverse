@@ -1,0 +1,26 @@
+{
+  "name": "payment-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch ",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@repo/types": "workspace:^",
+    "@repo/typescript-config": "workspace:^",
+    "@types/node": "^25.2.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@polar-sh/sdk": "^0.43.0",
+    "fastify": "^5.7.4",
+    "zod": "^4.3.6"
+  }
+}
